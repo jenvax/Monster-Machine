@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Inter:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="machine-head" aria-labelledby="page-title">
+        <div class="title-wrap">
+          <p class="eyebrow">Jen Vax Creative</p>
+          <h1 id="page-title">Monster Machine</h1>
+        </div>
+        <div class="doodle-strip" aria-hidden="true">
+          <span class="doodle moon"></span>
+          <span class="doodle pumpkin"></span>
+          <span class="doodle ghost"></span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Monster generator controls">
+        <button class="primary-button" id="makeMonsterButton" type="button">
+          MAKE A MONSTER
+        </button>
+        <button class="secondary-button" id="rerollMonsterButton" type="button" disabled>
+          REROLL MONSTER
+        </button>
+        <button class="secondary-button" id="rerollMayhemButton" type="button" disabled>
+          REROLL MAYHEM
+        </button>
+      </section>
+
+      <section class="result-layout" aria-live="polite">
+        <div class="section-panel monster-panel">
+          <div class="section-heading">
+            <span class="section-kicker">Build your monster</span>
+            <h2>YOUR MONSTER</h2>
+          </div>
+          <div class="prompt-grid" id="monsterGrid"></div>
+        </div>
+
+        <div class="section-panel mayhem-panel">
+          <div class="section-heading">
+            <span class="section-kicker">Final surprise</span>
+            <h2>ADD A LITTLE MAYHEM</h2>
+          </div>
+          <div id="mayhemSlot"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/options.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
