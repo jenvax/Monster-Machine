@@ -68,8 +68,8 @@ h2 {
 h1 {
   max-width: 780px;
   font-family: Gaegu, Inter, sans-serif;
-  font-size: clamp(3.6rem, 8vw, 7.25rem);
-  line-height: 0.84;
+  font-size: clamp(3.15rem, 6.8vw, 6.35rem);
+  line-height: 0.88;
 }
 
 h2 {
@@ -233,6 +233,14 @@ button:disabled {
 
 .section-kicker {
   color: var(--purple);
+}
+
+.monster-panel .section-heading h2 {
+  display: none;
+}
+
+.monster-panel .section-kicker {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
 }
 
 .mayhem-panel .section-heading {
