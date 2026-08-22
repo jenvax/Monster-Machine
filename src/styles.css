@@ -289,6 +289,10 @@ button:disabled {
   background: #dfe7c7;
 }
 
+.prompt-item-wide {
+  grid-column: 1 / -1;
+}
+
 .prompt-copy {
   min-width: 0;
 }

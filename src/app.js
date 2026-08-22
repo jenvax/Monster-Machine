@@ -9,8 +9,30 @@ const state = {
   selections: {},
 };
 
+const MONSTER_CARD_ORDER = [
+  "monsterType",
+  "headShape",
+  "bodyShape",
+  "headExtra",
+  "numberOfEyes",
+  "eyeShape",
+  "mouth",
+  "texture",
+  "numberOfArms",
+  "armShape",
+  "numberOfLegs",
+  "legShape",
+  "tail",
+];
+
 function randomOption(options) {
   return options[Math.floor(Math.random() * options.length)];
+}
+
+function orderedMonsterCategories() {
+  return MONSTER_CARD_ORDER.map((id) =>
+    MONSTER_CATEGORIES.find((category) => category.id === id),
+  ).filter(Boolean);
 }
 
 function randomizeCategory(category) {
@@ -39,6 +61,9 @@ function setGenerated() {
 function renderMonsterCategory(category) {
   const item = document.createElement("article");
   item.className = "prompt-item";
+  if (category.id === "tail") {
+    item.classList.add("prompt-item-wide");
+  }
 
   const copy = document.createElement("div");
   copy.className = "prompt-copy";
@@ -98,7 +123,7 @@ function renderMayhem() {
 }
 
 function render() {
-  monsterGrid.replaceChildren(...MONSTER_CATEGORIES.map(renderMonsterCategory));
+  monsterGrid.replaceChildren(...orderedMonsterCategories().map(renderMonsterCategory));
   mayhemSlot.replaceChildren(renderMayhem());
 }
 
