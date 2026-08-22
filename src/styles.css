@@ -68,8 +68,8 @@ h2 {
 h1 {
   max-width: 780px;
   font-family: Gaegu, Inter, sans-serif;
-  font-size: clamp(4.2rem, 10vw, 8.5rem);
-  line-height: 0.78;
+  font-size: clamp(3.6rem, 8vw, 7.25rem);
+  line-height: 0.84;
 }
 
 h2 {
@@ -240,6 +240,11 @@ button:disabled {
   padding: 18px 18px 0;
 }
 
+.mayhem-panel h2 {
+  font-size: clamp(1.65rem, 2.5vw, 2.7rem);
+  line-height: 0.98;
+}
+
 .mayhem-panel .section-kicker {
   display: block;
   margin-bottom: 8px;
@@ -323,6 +328,7 @@ button:disabled {
   min-height: 230px;
   margin: 18px;
   padding: 22px;
+  overflow: hidden;
   background:
     linear-gradient(90deg, rgba(255, 244, 223, 0.12) 1px, transparent 1px),
     linear-gradient(rgba(255, 244, 223, 0.12) 1px, transparent 1px),
@@ -332,10 +338,11 @@ button:disabled {
 }
 
 .mayhem-value {
+  max-width: 100%;
   width: 100%;
-  font-size: clamp(2.15rem, 4.5vw, 3.9rem);
-  line-height: 0.92;
-  text-transform: uppercase;
+  font-size: clamp(2rem, 2.9vw, 3rem);
+  line-height: 1;
+  text-wrap: balance;
 }
 
 .mayhem-shuffle {
@@ -394,6 +401,10 @@ button:disabled {
   .primary-button,
   .secondary-button {
     min-height: 58px;
+  }
+
+  #rerollMayhemButton {
+    display: none;
   }
 
   .mayhem-item {
