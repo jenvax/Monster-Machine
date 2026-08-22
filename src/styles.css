@@ -288,10 +288,11 @@ button:disabled {
 .prompt-value,
 .mayhem-value {
   margin: 0;
-  overflow-wrap: anywhere;
   font-family: Gaegu, Inter, sans-serif;
   font-weight: 700;
   letter-spacing: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .prompt-value {
@@ -317,9 +318,11 @@ button:disabled {
 }
 
 .mayhem-item {
+  display: grid;
+  align-content: space-between;
   min-height: 230px;
   margin: 18px;
-  padding: 20px;
+  padding: 22px;
   background:
     linear-gradient(90deg, rgba(255, 244, 223, 0.12) 1px, transparent 1px),
     linear-gradient(rgba(255, 244, 223, 0.12) 1px, transparent 1px),
@@ -329,12 +332,14 @@ button:disabled {
 }
 
 .mayhem-value {
-  font-size: clamp(2.7rem, 6vw, 4.8rem);
-  line-height: 0.82;
+  width: 100%;
+  font-size: clamp(2.15rem, 4.5vw, 3.9rem);
+  line-height: 0.92;
   text-transform: uppercase;
 }
 
 .mayhem-shuffle {
+  justify-self: end;
   background: var(--pink);
 }
 
@@ -392,7 +397,6 @@ button:disabled {
   }
 
   .mayhem-item {
-    align-items: start;
-    flex-direction: column;
+    padding: 20px;
   }
 }
