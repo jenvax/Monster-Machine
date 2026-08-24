@@ -10,19 +10,18 @@ const state = {
 };
 
 const MONSTER_CARD_ORDER = [
-  "monsterType",
   "headShape",
   "bodyShape",
-  "headExtra",
   "numberOfEyes",
   "eyeShape",
   "mouth",
+  "monsterFeature",
   "texture",
+  "tail",
   "numberOfArms",
   "armShape",
   "numberOfLegs",
   "legShape",
-  "tail",
 ];
 
 function randomOption(options) {
@@ -61,9 +60,6 @@ function setGenerated() {
 function renderMonsterCategory(category) {
   const item = document.createElement("article");
   item.className = "prompt-item";
-  if (category.id === "tail") {
-    item.classList.add("prompt-item-wide");
-  }
 
   const copy = document.createElement("div");
   copy.className = "prompt-copy";
