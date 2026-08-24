@@ -25,6 +25,7 @@ const MONSTER_CATEGORIES = [
     label: "Head Shape",
     resultLabel: "Head",
     options: [
+      "No Separate Head",
       "Circle",
       "Oval",
       "Square",
@@ -108,10 +109,6 @@ const MONSTER_CATEGORIES = [
       "2 Horns",
       "Antennae",
       "Eyeball Stalks",
-      "Pointy Ears",
-      "Bat Ears",
-      "Floppy Ears",
-      "Tiny Ears",
       "Tuft of Hair",
       "Wild Hair",
       "Mohawk",
