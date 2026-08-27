@@ -12,8 +12,12 @@ python3 -m http.server 5173
 
 Then open `http://localhost:5173`.
 
+The experimental mashup generator is available at `http://localhost:5173/experiment.html`.
+
 ## Editing Prompts
 
 All prompt options live in `src/options.js`.
 
 The physical monster prompts are in `MONSTER_CATEGORIES`. The wildcard prompt is in `MAYHEM_CATEGORY`.
+
+Experimental mashup options live in `src/experiment-options.js`.

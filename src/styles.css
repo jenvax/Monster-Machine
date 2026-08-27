@@ -358,6 +358,110 @@ button:disabled {
   background: var(--pink);
 }
 
+.experiment-shell {
+  max-width: 1080px;
+}
+
+.experiment-head {
+  align-items: center;
+}
+
+.experiment-tagline {
+  max-width: 620px;
+  margin: 14px 0 0;
+  color: var(--plum);
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.experiment-formula {
+  margin-bottom: 14px;
+  padding: 14px 18px;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow: 4px 4px 0 var(--ink);
+  color: var(--plum);
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.experiment-controls {
+  display: grid;
+  margin-bottom: 18px;
+}
+
+.experiment-deck {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.experiment-card {
+  display: grid;
+  align-content: space-between;
+  gap: 18px;
+  min-height: 210px;
+  padding: 16px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #fff9ec;
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+
+.experiment-card:nth-child(2n) {
+  background: #dfe7c7;
+}
+
+.experiment-card:nth-child(3n) {
+  background: #ffe1c4;
+}
+
+.experiment-card .icon-button {
+  justify-self: end;
+}
+
+.experiment-value {
+  margin: 8px 0 0;
+  font-family: Gaegu, Inter, sans-serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 700;
+  line-height: 0.95;
+  overflow-wrap: break-word;
+}
+
+.experiment-result {
+  padding: 22px;
+}
+
+.experiment-combo,
+.experiment-prompt {
+  max-width: 920px;
+  margin: 0;
+  font-family: Gaegu, Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.experiment-combo {
+  margin-top: 10px;
+  font-size: clamp(2rem, 4vw, 3.85rem);
+  line-height: 0.95;
+  overflow-wrap: break-word;
+}
+
+.experiment-prompt {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 2px dashed rgba(23, 19, 18, 0.35);
+  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+  line-height: 1.05;
+}
+
 @media (max-width: 880px) {
   .machine-head,
   .section-heading {
@@ -390,6 +494,14 @@ button:disabled {
   .mayhem-item {
     min-height: 170px;
   }
+
+  .experiment-deck {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experiment-card {
+    min-height: 175px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -417,5 +529,13 @@ button:disabled {
 
   .mayhem-item {
     padding: 20px;
+  }
+
+  .experiment-deck {
+    grid-template-columns: 1fr;
+  }
+
+  .experiment-card {
+    min-height: 138px;
   }
 }

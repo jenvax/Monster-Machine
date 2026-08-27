@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Machine Experiment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Inter:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell experiment-shell">
+      <section class="machine-head experiment-head" aria-labelledby="page-title">
+        <div class="title-wrap">
+          <p class="eyebrow">Jen Vax Creative</p>
+          <h1 id="page-title">Monster Machine</h1>
+          <p class="experiment-tagline">
+            Mash two monsters together. Add a twist. Create a little mayhem.
+          </p>
+        </div>
+        <div class="doodle-strip" aria-hidden="true">
+          <span class="doodle moon"></span>
+          <span class="doodle pumpkin"></span>
+          <span class="doodle ghost"></span>
+        </div>
+      </section>
+
+      <section class="experiment-formula" aria-label="Monster formula">
+        MONSTER + MONSTER + LOOK + TWIST + MAYHEM
+      </section>
+
+      <section class="experiment-controls" aria-label="Experimental monster controls">
+        <button class="primary-button" id="makeExperimentButton" type="button">
+          MAKE A MONSTER
+        </button>
+      </section>
+
+      <section class="experiment-deck" id="experimentDeck" aria-live="polite"></section>
+
+      <section class="experiment-result section-panel" aria-live="polite">
+        <p class="section-kicker">Your monster</p>
+        <p class="experiment-combo" id="monsterCombo">Not picked yet</p>
+        <p class="experiment-prompt" id="drawingPrompt">
+          Make a monster to reveal the drawing prompt.
+        </p>
+      </section>
+    </main>
+
+    <script src="./src/experiment-options.js"></script>
+    <script src="./src/experiment.js"></script>
+  </body>
+</html>
