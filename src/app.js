@@ -1,7 +1,6 @@
 const monsterGrid = document.querySelector("#monsterGrid");
 const mayhemSlot = document.querySelector("#mayhemSlot");
 const makeMonsterButton = document.querySelector("#makeMonsterButton");
-const rerollMonsterButton = document.querySelector("#rerollMonsterButton");
 const rerollMayhemButton = document.querySelector("#rerollMayhemButton");
 
 const state = {
@@ -53,7 +52,6 @@ function displayValue(category) {
 function setGenerated() {
   state.hasGenerated = true;
   makeMonsterButton.textContent = "MAKE ANOTHER MONSTER";
-  rerollMonsterButton.disabled = false;
   rerollMayhemButton.disabled = false;
 }
 
@@ -125,13 +123,9 @@ function render() {
 
 makeMonsterButton.addEventListener("click", () => {
   randomizeMonster();
-  randomizeMayhem();
-  setGenerated();
-  render();
-});
-
-rerollMonsterButton.addEventListener("click", () => {
-  randomizeMonster();
+  if (!state.hasGenerated) {
+    randomizeMayhem();
+  }
   setGenerated();
   render();
 });
