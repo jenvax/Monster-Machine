@@ -15,7 +15,6 @@ const EXPERIMENT_OPTIONS = {
     "Devil",
     "Scarecrow",
     "Swamp Monster",
-    "Alien",
     "Cyclops",
     "Monster",
   ],
