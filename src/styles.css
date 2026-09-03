@@ -360,30 +360,32 @@ button:disabled {
 
 .experiment-shell {
   max-width: 1080px;
+  padding-top: 16px;
 }
 
 .experiment-head {
   align-items: center;
+  padding: 8px 0 14px;
 }
 
 .experiment-tagline {
   max-width: 620px;
-  margin: 14px 0 0;
+  margin: 8px 0 0;
   color: var(--plum);
-  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-weight: 800;
   line-height: 1.1;
 }
 
 .experiment-formula {
-  margin-bottom: 14px;
-  padding: 14px 18px;
+  margin-bottom: 10px;
+  padding: 7px 14px;
   border: 3px solid var(--ink);
   border-radius: 8px;
   background: var(--cream);
   box-shadow: 4px 4px 0 var(--ink);
   color: var(--plum);
-  font-size: clamp(1rem, 2vw, 1.45rem);
+  font-size: clamp(0.9rem, 1.55vw, 1.15rem);
   font-weight: 800;
   line-height: 1.15;
   text-align: center;
@@ -391,22 +393,32 @@ button:disabled {
 
 .experiment-controls {
   display: grid;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
+}
+
+.experiment-controls .primary-button {
+  min-height: 48px;
+  height: 50px;
 }
 
 .experiment-deck {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 18px;
+  grid-template-columns:
+    minmax(0, 18fr)
+    minmax(0, 18fr)
+    minmax(0, 16fr)
+    minmax(0, 20fr)
+    minmax(0, 28fr);
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .experiment-card {
   display: grid;
-  align-content: space-between;
-  gap: 18px;
-  min-height: 210px;
-  padding: 16px;
+  align-content: start;
+  gap: 12px;
+  min-height: 220px;
+  padding: 14px;
   border: 2px solid var(--ink);
   border-radius: 8px;
   background: #fff9ec;
@@ -421,21 +433,30 @@ button:disabled {
   background: #ffe1c4;
 }
 
+.experiment-card:last-child:nth-child(6) {
+  grid-column: 1 / -1;
+  min-height: 140px;
+}
+
 .experiment-card .icon-button {
   justify-self: end;
+  align-self: end;
+  margin-top: auto;
 }
 
 .experiment-value {
-  margin: 8px 0 0;
+  max-width: 100%;
+  margin: 7px 0 0;
   font-family: Gaegu, Inter, sans-serif;
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(1.55rem, 2.35vw, 2.35rem);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1;
   overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .experiment-result {
-  padding: 22px;
+  padding: 18px;
 }
 
 .experiment-combo,
@@ -448,17 +469,18 @@ button:disabled {
 }
 
 .experiment-combo {
-  margin-top: 10px;
-  font-size: clamp(2rem, 4vw, 3.85rem);
-  line-height: 0.95;
+  margin-top: 8px;
+  font-size: clamp(1.75rem, 3.2vw, 3.2rem);
+  line-height: 1;
   overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .experiment-prompt {
-  margin-top: 18px;
-  padding-top: 18px;
+  margin-top: 14px;
+  padding-top: 14px;
   border-top: 2px dashed rgba(23, 19, 18, 0.35);
-  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
   line-height: 1.05;
 }
 
@@ -500,7 +522,11 @@ button:disabled {
   }
 
   .experiment-card {
-    min-height: 175px;
+    min-height: 155px;
+  }
+
+  .experiment-card:last-child:nth-child(6) {
+    grid-column: auto;
   }
 }
 
@@ -536,6 +562,6 @@ button:disabled {
   }
 
   .experiment-card {
-    min-height: 138px;
+    min-height: 128px;
   }
 }
