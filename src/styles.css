@@ -377,20 +377,6 @@ button:disabled {
   line-height: 1.1;
 }
 
-.experiment-formula {
-  margin-bottom: 10px;
-  padding: 7px 14px;
-  border: 3px solid var(--ink);
-  border-radius: 8px;
-  background: var(--cream);
-  box-shadow: 4px 4px 0 var(--ink);
-  color: var(--plum);
-  font-size: clamp(0.9rem, 1.55vw, 1.15rem);
-  font-weight: 800;
-  line-height: 1.15;
-  text-align: center;
-}
-
 .experiment-controls {
   display: grid;
   margin-bottom: 12px;
