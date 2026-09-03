@@ -12,7 +12,6 @@ const EXPERIMENT_OPTIONS = {
     "Spider",
     "Bat",
     "Werewolf",
-    "Devil",
     "Scarecrow",
     "Cyclops",
     "Monster",
