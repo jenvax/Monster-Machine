@@ -1,6 +1,5 @@
 const experimentDeck = document.querySelector("#experimentDeck");
 const makeExperimentButton = document.querySelector("#makeExperimentButton");
-const monsterCombo = document.querySelector("#monsterCombo");
 const drawingPrompt = document.querySelector("#drawingPrompt");
 
 const experimentState = {
@@ -110,19 +109,6 @@ function combinedMonsterName() {
   return monsterTwo ? `${monsterOne}-${monsterTwo}` : monsterOne;
 }
 
-function comboParts() {
-  const { monsterOne, monsterTwo, exaggerate, oddity, mayhem, prop } =
-    experimentState.selections;
-  return [
-    monsterOne,
-    monsterTwo,
-    `Exaggerate ${exaggerate}`,
-    oddity,
-    mayhem,
-    prop,
-  ].filter(Boolean);
-}
-
 function buildDrawingPrompt() {
   const { exaggerate, oddity, mayhem, prop } = experimentState.selections;
   const optionalProp = prop ? `, with ${propPhrase(prop)} nearby` : "";
@@ -167,12 +153,10 @@ function renderExperimentCard(category) {
 
 function renderResult() {
   if (!experimentState.hasGenerated) {
-    monsterCombo.textContent = "Not picked yet";
     drawingPrompt.textContent = "Make a monster to reveal the drawing prompt.";
     return;
   }
 
-  monsterCombo.textContent = comboParts().join(" + ");
   drawingPrompt.textContent = buildDrawingPrompt();
 }
 
