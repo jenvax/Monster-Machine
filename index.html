@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
-    <main class="app-shell">
-      <section class="machine-head" aria-labelledby="page-title">
+    <main class="app-shell experiment-shell production-shell">
+      <section class="machine-head experiment-head" aria-labelledby="page-title">
         <div class="title-wrap">
           <p class="eyebrow">Jen Vax Creative</p>
           <h1 id="page-title">Monster Machine</h1>
@@ -26,35 +26,59 @@
         </div>
       </section>
 
-      <section class="controls" aria-label="Monster generator controls">
-        <button class="primary-button" id="makeMonsterButton" type="button">
-          MAKE A MONSTER
+      <section class="mode-switcher" aria-label="Monster Machine mode">
+        <button
+          class="mode-card active"
+          type="button"
+          data-mode-button="make"
+          aria-pressed="true"
+        >
+          <span>MAKE A MONSTER</span>
+          <small>Build an original creature from scratch.</small>
         </button>
-        <button class="secondary-button" id="rerollMayhemButton" type="button" disabled>
-          REROLL MAYHEM
+        <button
+          class="mode-card"
+          type="button"
+          data-mode-button="mash"
+          aria-pressed="false"
+        >
+          <span>MONSTER MASH</span>
+          <small>Combine familiar creatures into something unexpected.</small>
         </button>
       </section>
 
-      <section class="result-layout" aria-live="polite">
-        <div class="section-panel monster-panel">
-          <div class="section-heading">
-            <span class="section-kicker">Build your monster</span>
-            <h2>YOUR MONSTER</h2>
-          </div>
-          <div class="prompt-grid" id="monsterGrid"></div>
-        </div>
+      <p class="mode-helper" id="modeHelper">
+        Build a monster one playful decision at a time.
+      </p>
 
-        <div class="section-panel mayhem-panel">
-          <div class="section-heading">
-            <span class="section-kicker">Final surprise</span>
-            <h2>ADD A LITTLE MAYHEM</h2>
-          </div>
-          <div id="mayhemSlot"></div>
-        </div>
+      <section class="experiment-controls production-controls" aria-label="Monster generator controls">
+        <button class="primary-button" id="rollButton" type="button">
+          ROLL MONSTER
+        </button>
+        <button class="secondary-button one-monster-button" id="rollOneMonsterButton" type="button">
+          ROLL ONE MONSTER
+        </button>
+        <button class="secondary-button two-monster-button" id="rollTwoMonsterButton" type="button">
+          ROLL TWO MONSTERS
+        </button>
+      </section>
+
+      <section
+        class="experiment-deck production-deck"
+        id="generatorDeck"
+        aria-live="polite"
+      ></section>
+
+      <section class="experiment-result section-panel production-result" aria-live="polite">
+        <p class="section-kicker">Your monster</p>
+        <p class="experiment-prompt" id="drawingPrompt">
+          Roll a monster to reveal your creative recipe.
+        </p>
       </section>
     </main>
 
-    <script src="./src/options.js"></script>
+    <script src="./src/make-options.js"></script>
+    <script src="./src/experiment-options.js"></script>
     <script src="./src/app.js"></script>
   </body>
 </html>

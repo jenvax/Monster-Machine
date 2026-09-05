@@ -199,6 +199,10 @@ button:disabled {
   transform: none;
 }
 
+button[hidden] {
+  display: none;
+}
+
 .result-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(270px, 0.35fr);
@@ -377,9 +381,77 @@ button:disabled {
   line-height: 1.1;
 }
 
+.mode-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mode-card {
+  min-height: 88px;
+  padding: 14px 16px;
+  cursor: pointer;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  text-align: left;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.mode-card:hover {
+  transform: translate(1px, 1px) rotate(-0.2deg);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.mode-card.active {
+  background: var(--pumpkin);
+}
+
+.mode-card span,
+.mode-card small {
+  display: block;
+}
+
+.mode-card span {
+  font-weight: 800;
+}
+
+.mode-card small {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mode-helper {
+  margin: 0 0 10px;
+  color: var(--plum);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
 .experiment-controls {
   display: grid;
   margin-bottom: 12px;
+}
+
+.production-controls {
+  gap: 12px;
+}
+
+.production-controls[data-mode="make"] {
+  grid-template-columns: 1fr;
+}
+
+.production-controls[data-mode="mash"] {
+  grid-template-columns: minmax(0, 1fr) repeat(2, minmax(170px, 0.28fr));
 }
 
 .experiment-controls .primary-button {
@@ -397,6 +469,19 @@ button:disabled {
     minmax(0, 28fr);
   gap: 10px;
   margin-bottom: 12px;
+}
+
+.production-deck[data-mode="make"] {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.production-deck[data-mode="mash"] {
+  grid-template-columns:
+    minmax(0, 21fr)
+    minmax(0, 21fr)
+    minmax(0, 12fr)
+    minmax(0, 18fr)
+    minmax(0, 28fr);
 }
 
 .experiment-card {
@@ -430,21 +515,55 @@ button:disabled {
   margin-top: auto;
 }
 
+.card-actions {
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.mini-button {
+  min-height: 38px;
+  padding: 0 10px;
+  cursor: pointer;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.mini-button:hover {
+  transform: translate(1px, 1px) rotate(-0.2deg);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.mini-button[aria-pressed="true"] {
+  background: var(--pink);
+}
+
 .experiment-value {
   max-width: 100%;
   margin: 7px 0 0;
   font-family: Gaegu, Inter, sans-serif;
-  font-size: clamp(1.45rem, 2vw, 2.1rem);
+  font-size: clamp(1.35rem, 1.8vw, 1.95rem);
   font-weight: 700;
   line-height: 1;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
   word-break: normal;
   text-wrap: balance;
 }
 
 .experiment-card[data-category="mayhem"] .experiment-value,
 .experiment-card[data-category="oddity"] .experiment-value {
-  font-size: clamp(1.35rem, 1.8vw, 1.95rem);
+  font-size: clamp(1.25rem, 1.65vw, 1.8rem);
 }
 
 .experiment-result {
@@ -502,6 +621,13 @@ button:disabled {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .production-controls[data-mode="make"],
+  .production-controls[data-mode="mash"],
+  .production-deck[data-mode="make"],
+  .production-deck[data-mode="mash"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .experiment-card {
     min-height: 155px;
   }
@@ -539,6 +665,14 @@ button:disabled {
   }
 
   .experiment-deck {
+    grid-template-columns: 1fr;
+  }
+
+  .mode-switcher,
+  .production-controls[data-mode="make"],
+  .production-controls[data-mode="mash"],
+  .production-deck[data-mode="make"],
+  .production-deck[data-mode="mash"] {
     grid-template-columns: 1fr;
   }
 
