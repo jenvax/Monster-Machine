@@ -118,6 +118,7 @@ function buildDrawingPrompt() {
 function renderExperimentCard(category) {
   const card = document.createElement("article");
   card.className = "experiment-card";
+  card.dataset.category = category.id;
 
   const copy = document.createElement("div");
   copy.className = "prompt-copy";
