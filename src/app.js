@@ -98,7 +98,24 @@ function setMode(mode) {
 }
 
 function rollMakeCategory(category) {
-  appState.selections.make[category.id] = pickRandom(category.options);
+  const makeSelections = appState.selections.make;
+  const options =
+    category.id === "exaggerate" && makeSelections.face === "No Visible Eyes"
+      ? category.options.filter((option) => option !== "Eyes")
+      : category.options;
+
+  makeSelections[category.id] = pickRandom(options);
+
+  if (
+    category.id === "face" &&
+    makeSelections.face === "No Visible Eyes" &&
+    makeSelections.exaggerate === "Eyes"
+  ) {
+    const exaggerateCategory = MAKE_OPTIONS.categories.find(
+      (item) => item.id === "exaggerate",
+    );
+    rollMakeCategory(exaggerateCategory);
+  }
 }
 
 function rollMakeAll() {
