@@ -14,7 +14,6 @@ const EXPERIMENT_OPTIONS = {
     "Werewolf",
     "Scarecrow",
     "Cyclops",
-    "Monster",
   ],
   exaggerations: [
     "Eyes",
