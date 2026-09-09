@@ -98,24 +98,7 @@ function setMode(mode) {
 }
 
 function rollMakeCategory(category) {
-  const makeSelections = appState.selections.make;
-  const options =
-    category.id === "exaggerate" && makeSelections.face === "No Visible Eyes"
-      ? category.options.filter((option) => option !== "Eyes")
-      : category.options;
-
-  makeSelections[category.id] = pickRandom(options);
-
-  if (
-    category.id === "face" &&
-    makeSelections.face === "No Visible Eyes" &&
-    makeSelections.exaggerate === "Eyes"
-  ) {
-    const exaggerateCategory = MAKE_OPTIONS.categories.find(
-      (item) => item.id === "exaggerate",
-    );
-    rollMakeCategory(exaggerateCategory);
-  }
+  appState.selections.make[category.id] = pickRandom(category.options);
 }
 
 function rollMakeAll() {
@@ -281,7 +264,7 @@ function buildMakePrompt() {
     return "Roll a monster to reveal your creative recipe.";
   }
 
-  return "Start with the shape, add the face and feature, then push the exaggeration until the personality starts to show.";
+  return "Start with the shape, add the face and oddity, then push the exaggeration until the monster starts to show.";
 }
 
 function buildMashPrompt() {
